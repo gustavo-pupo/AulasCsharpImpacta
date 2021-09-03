@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsharpCapitulo1Sintaxe", "CsharpCapitulo1Sintaxe\CsharpCapitulo1Sintaxe.csproj", "{F619525E-BE8A-4468-B72E-FD037008CE6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F619525E-BE8A-4468-B72E-FD037008CE6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F619525E-BE8A-4468-B72E-FD037008CE6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F619525E-BE8A-4468-B72E-FD037008CE6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F619525E-BE8A-4468-B72E-FD037008CE6D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F3F2CEB6-3031-4AC2-879B-FBFD6D494E60}
+	EndGlobalSection
+EndGlobal
