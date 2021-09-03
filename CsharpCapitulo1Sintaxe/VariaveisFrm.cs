@@ -1,18 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+//using System.Collections.Generic;
+//using System.ComponentModel;
+//using System.Data;
+//using System.Drawing;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CsharpCapitulo1Sintaxe
 {
     public partial class Form1 : Form
     {
-        
+
 
         public Form1()
         {
@@ -45,7 +45,7 @@ namespace CsharpCapitulo1Sintaxe
 
             object camaleao = "Erik";
             camaleao = 5;
-            camaleao = DateTime.Now; 
+            camaleao = DateTime.Now;
 
             int a = 2;
             var b = 6;
@@ -57,7 +57,7 @@ namespace CsharpCapitulo1Sintaxe
 
             // tipos diferentes de concatenação
             resultadoListBox.Items.Add("Valor de A: " + a/*.ToString()*/);  // Shift + Ctrl + Space; ler de trás para 
-            resultadoListBox.Items.Add(string.Concat("Valor de B: ", b));   
+            resultadoListBox.Items.Add(string.Concat("Valor de B: ", b));
             resultadoListBox.Items.Add(string.Format("Valor de C: {0}", c));
             //resultadoListBox.Items.Add(string.Format("Valor de C: {0} - D: ", c, d));
             resultadoListBox.Items.Add($"Valor de D: {d}"); //tipo JS
@@ -96,7 +96,7 @@ namespace CsharpCapitulo1Sintaxe
             resultadoListBox.Items.Add($"2 + ++a = {2 + ++a}");//8
             resultadoListBox.Items.Add($"a = {a}");
 
-            resultadoListBox.Items.Add(new string('=' , 100));
+            resultadoListBox.Items.Add(new string('=', 100));
 
             a = 5;
             resultadoListBox.Items.Add("Exemplo de pós");
@@ -118,7 +118,7 @@ namespace CsharpCapitulo1Sintaxe
             resultadoListBox.Items.Add($"x == z = {x == z}");
             resultadoListBox.Items.Add($"x != z = {x != z}");
 
-            
+
         }
         void ExibirValores()
         {
@@ -148,6 +148,33 @@ namespace CsharpCapitulo1Sintaxe
             //    var x = 10;
             //}
             //var x = 5;
+        }
+
+        private void ternarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            resultadoListBox.Items.Clear();
+            int ano;
+
+            //não fazer ternários muito extensos
+            ano = 2014;
+            resultadoListBox.Items.Add($"O ano {ano} é bissexto? { (ano % 4 == 0 ? "sim" : "não")}");
+
+            ano = 2016;
+            resultadoListBox.Items.Add($"O ano {ano} é bissexto? { (DateTime.IsLeapYear(ano)? "sim" : "não")}");
+
+            ano = 1988;
+            var resposta = "";
+            if (DateTime.IsLeapYear(ano))
+            {
+                resposta = "Sim";
+                resultadoListBox.Items.Add($"O ano {ano} é bissexto? {resposta}");
+            }
+            else
+            {
+                resposta = "Não"; 
+                resultadoListBox.Items.Add($"O ano {ano} é bissexto? {resposta}");
+            }
+
         }
     }
 }

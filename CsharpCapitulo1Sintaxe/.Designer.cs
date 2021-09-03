@@ -35,8 +35,9 @@ namespace CsharpCapitulo1Sintaxe
             this.reduzidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.incrementaisDecrementaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oparaçõesBooleanasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.logicasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.ternarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +57,8 @@ namespace CsharpCapitulo1Sintaxe
             this.reduzidasToolStripMenuItem,
             this.incrementaisDecrementaisToolStripMenuItem,
             this.oparaçõesBooleanasToolStripMenuItem,
-            this.logicasToolStripMenuItem});
+            this.logicasToolStripMenuItem,
+            this.ternarioToolStripMenuItem});
             this.OperacoesToolStripMenuItem.Name = "OperacoesToolStripMenuItem";
             this.OperacoesToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.OperacoesToolStripMenuItem.Text = "&Operações";
@@ -89,6 +91,13 @@ namespace CsharpCapitulo1Sintaxe
             this.oparaçõesBooleanasToolStripMenuItem.Text = "&Booleanas";
             this.oparaçõesBooleanasToolStripMenuItem.Click += new System.EventHandler(this.BooleanasToolStripMenuItem_Click);
             // 
+            // logicasToolStripMenuItem
+            // 
+            this.logicasToolStripMenuItem.Name = "logicasToolStripMenuItem";
+            this.logicasToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.logicasToolStripMenuItem.Text = "&Lógicas";
+            this.logicasToolStripMenuItem.Click += new System.EventHandler(this.logicasToolStripMenuItem_Click);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -99,12 +108,12 @@ namespace CsharpCapitulo1Sintaxe
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // logicasToolStripMenuItem
+            // ternarioToolStripMenuItem
             // 
-            this.logicasToolStripMenuItem.Name = "logicasToolStripMenuItem";
-            this.logicasToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.logicasToolStripMenuItem.Text = "&Lógicas";
-            this.logicasToolStripMenuItem.Click += new System.EventHandler(this.logicasToolStripMenuItem_Click);
+            this.ternarioToolStripMenuItem.Name = "ternarioToolStripMenuItem";
+            this.ternarioToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.ternarioToolStripMenuItem.Text = "&Ternário";
+            this.ternarioToolStripMenuItem.Click += new System.EventHandler(this.ternarioToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -133,6 +142,7 @@ namespace CsharpCapitulo1Sintaxe
         private System.Windows.Forms.ToolStripMenuItem incrementaisDecrementaisToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem oparaçõesBooleanasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logicasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ternarioToolStripMenuItem;
     }
 }
 
