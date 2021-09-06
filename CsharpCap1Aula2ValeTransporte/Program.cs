@@ -26,7 +26,7 @@ namespace CsharpCap1Aula2ValeTransporte
 
             Console.WriteLine(resultado);
 
-            Console.WriteLine("Pressone qualquer bosta para continuar ou Esc para sair");
+            Console.WriteLine("Pressone qualquer tecla para continuar ou Esc para sair");
             /*ConsoleKeyInfo */var comando = Console.ReadKey();
 
             if (comando.Key == ConsoleKey.Escape)

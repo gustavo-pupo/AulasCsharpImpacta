@@ -160,7 +160,7 @@ namespace CsharpCapitulo1Sintaxe
             resultadoListBox.Items.Add($"O ano {ano} é bissexto? { (ano % 4 == 0 ? "sim" : "não")}");
 
             ano = 2016;
-            resultadoListBox.Items.Add($"O ano {ano} é bissexto? { (DateTime.IsLeapYear(ano)? "sim" : "não")}");
+            resultadoListBox.Items.Add($"O ano {ano} é bissexto? { (DateTime.IsLeapYear(ano) ? "sim" : "não")}");
 
             ano = 1988;
             var resposta = "";
@@ -171,7 +171,7 @@ namespace CsharpCapitulo1Sintaxe
             }
             else
             {
-                resposta = "Não"; 
+                resposta = "Não";
                 resultadoListBox.Items.Add($"O ano {ano} é bissexto? {resposta}");
             }
 

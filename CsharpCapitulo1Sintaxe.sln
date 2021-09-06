@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsharpCapitulo1Sintaxe", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsharpCap1Aula2ValeTransporte", "CsharpCap1Aula2ValeTransporte\CsharpCap1Aula2ValeTransporte.csproj", "{56203696-A51B-41A3-B83D-87C3CDAC6B52}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsharpCap2GeradordeSenha", "CsharpCap2GeradordeSenha\CsharpCap2GeradordeSenha.csproj", "{CA6C4EBC-B0EF-4D4A-9DA2-5E29580F2FE4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{56203696-A51B-41A3-B83D-87C3CDAC6B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56203696-A51B-41A3-B83D-87C3CDAC6B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56203696-A51B-41A3-B83D-87C3CDAC6B52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA6C4EBC-B0EF-4D4A-9DA2-5E29580F2FE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA6C4EBC-B0EF-4D4A-9DA2-5E29580F2FE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA6C4EBC-B0EF-4D4A-9DA2-5E29580F2FE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA6C4EBC-B0EF-4D4A-9DA2-5E29580F2FE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

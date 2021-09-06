@@ -36,8 +36,8 @@ namespace CsharpCapitulo1Sintaxe
             this.incrementaisDecrementaisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oparaçõesBooleanasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logicasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.ternarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,6 +49,7 @@ namespace CsharpCapitulo1Sintaxe
             this.resultadoListBox.Name = "resultadoListBox";
             this.resultadoListBox.Size = new System.Drawing.Size(522, 283);
             this.resultadoListBox.TabIndex = 1;
+            this.resultadoListBox.SelectedIndexChanged += new System.EventHandler(this.resultadoListBox_SelectedIndexChanged);
             // 
             // OperacoesToolStripMenuItem
             // 
@@ -98,6 +99,13 @@ namespace CsharpCapitulo1Sintaxe
             this.logicasToolStripMenuItem.Text = "&Lógicas";
             this.logicasToolStripMenuItem.Click += new System.EventHandler(this.logicasToolStripMenuItem_Click);
             // 
+            // ternarioToolStripMenuItem
+            // 
+            this.ternarioToolStripMenuItem.Name = "ternarioToolStripMenuItem";
+            this.ternarioToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.ternarioToolStripMenuItem.Text = "&Ternário";
+            this.ternarioToolStripMenuItem.Click += new System.EventHandler(this.ternarioToolStripMenuItem_Click);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -107,13 +115,6 @@ namespace CsharpCapitulo1Sintaxe
             this.menuStrip1.Size = new System.Drawing.Size(522, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // ternarioToolStripMenuItem
-            // 
-            this.ternarioToolStripMenuItem.Name = "ternarioToolStripMenuItem";
-            this.ternarioToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.ternarioToolStripMenuItem.Text = "&Ternário";
-            this.ternarioToolStripMenuItem.Click += new System.EventHandler(this.ternarioToolStripMenuItem_Click);
             // 
             // Form1
             // 
