@@ -49,7 +49,6 @@ namespace CsharpCapitulo1Sintaxe
             this.resultadoListBox.Name = "resultadoListBox";
             this.resultadoListBox.Size = new System.Drawing.Size(522, 283);
             this.resultadoListBox.TabIndex = 1;
-            this.resultadoListBox.SelectedIndexChanged += new System.EventHandler(this.resultadoListBox_SelectedIndexChanged);
             // 
             // OperacoesToolStripMenuItem
             // 
