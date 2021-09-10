@@ -9,7 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CsharpCap1Aula2ValeTranspor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CsharpCap2GeradordeSenha", "CsharpCap2GeradordeSenha\CsharpCap2GeradordeSenha.csproj", "{CA6C4EBC-B0EF-4D4A-9DA2-5E29580F2FE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoTesteCapitulo02", "ProjetoTesteCapitulo02\ProjetoTesteCapitulo02.csproj", "{81F1D7FD-EFB7-40B1-8940-6BD2F665C2B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoTesteCapitulo02", "ProjetoTesteCapitulo02\ProjetoTesteCapitulo02.csproj", "{81F1D7FD-EFB7-40B1-8940-6BD2F665C2B2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FinTech", "FinTech", "{2BDF2D3A-1C4F-4BA4-9D6B-87FEEC261C9F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fintech.Dominio", "Fintech.Dominio\Fintech.Dominio.csproj", "{D186A265-0F88-43FB-B200-23C9E53C17CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FintechCorrentistaWpf", "FintechCorrentistaWpf\FintechCorrentistaWpf.csproj", "{7D7267B4-C4E2-4CC6-B8EF-08BF692D5E4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +39,21 @@ Global
 		{81F1D7FD-EFB7-40B1-8940-6BD2F665C2B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81F1D7FD-EFB7-40B1-8940-6BD2F665C2B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81F1D7FD-EFB7-40B1-8940-6BD2F665C2B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D186A265-0F88-43FB-B200-23C9E53C17CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D186A265-0F88-43FB-B200-23C9E53C17CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D186A265-0F88-43FB-B200-23C9E53C17CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D186A265-0F88-43FB-B200-23C9E53C17CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D7267B4-C4E2-4CC6-B8EF-08BF692D5E4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D7267B4-C4E2-4CC6-B8EF-08BF692D5E4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D7267B4-C4E2-4CC6-B8EF-08BF692D5E4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D7267B4-C4E2-4CC6-B8EF-08BF692D5E4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D186A265-0F88-43FB-B200-23C9E53C17CA} = {2BDF2D3A-1C4F-4BA4-9D6B-87FEEC261C9F}
+		{7D7267B4-C4E2-4CC6-B8EF-08BF692D5E4F} = {2BDF2D3A-1C4F-4BA4-9D6B-87FEEC261C9F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F3F2CEB6-3031-4AC2-879B-FBFD6D494E60}
