@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace CsharpCap2GeradordeSenha
 {
     class Program
@@ -28,18 +29,10 @@ namespace CsharpCap2GeradordeSenha
                 qtdDigitos = ObterQuantidadeDigitos();
             } while (qtdDigitos == 0);
 
-            var senha = string.Empty /* "" */;
-            var randomico = new Random();
+            var senha = new Senha(qtdDigitos);
+            
 
-            for (int i = 0; i < qtdDigitos; i++)
-            {
-                var digito = randomico.Next(10);
-
-                senha += digito;
-                //senha = senha + digito;
-            }
-
-            Console.WriteLine($"Senha gerada: {senha}");
+            Console.WriteLine($"Senha gerada: {senha.Valor}");
             Console.ReadLine();
 
             static int ObterQuantidadeDigitos()
