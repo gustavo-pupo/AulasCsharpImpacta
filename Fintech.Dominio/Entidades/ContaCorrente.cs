@@ -6,28 +6,23 @@ using System.Threading.Tasks;
 
 namespace Fintech.Dominio.Entidades
 {
-    class ContaCorrente
+    public class ContaCorrente : Conta
     {
-        public int Id { get; set; }
-        public Agencia Agencia { get; set; }
-        public int Numero { get; set; }
-        public string DigitoVerificador { get; set; }
-        public decimal Saldo { get; set; }
-        public Cliente Cliente { get; set; }
-
-        public void EfetuarOperacao(decimal valor, Operacao operacao)
+        public ContaCorrente(Agencia agencia, int numero, string digitoVerificador) : base(agencia, numero, digitoVerificador)
         {
-            switch (operacao)
-            {
-                case Operacao.Deposito:
-                    Saldo += valor;
-                    break;
-                case Operacao.Saque:
-                    Saldo -= valor;
-                    break;
+            //Numero = numero;
+            //DigitoVerificador = digitoVerificador;
 
 
-            }
+
+
+        }
+
+        public bool EmitirCheque { get; set; }
+
+        public override List<string> Validar()
+        {
+            throw new NotImplementedException();
         }
     }
 }
