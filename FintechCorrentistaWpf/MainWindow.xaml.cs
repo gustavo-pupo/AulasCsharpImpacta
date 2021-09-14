@@ -50,6 +50,8 @@ namespace FintechCorrentistaWpf
             tipoContaComboBox.Items.Add(TipoContas.ContaEspecial);
             tipoContaComboBox.Items.Add(TipoContas.Poupanca);
 
+            operacaoComboBox.Items.Add(Operacao.Deposito);
+            operacaoComboBox.Items.Add(Operacao.Saque);
 
 
         }
@@ -100,14 +102,19 @@ namespace FintechCorrentistaWpf
 
         private void SelecionarClienteButtonClick(object sender, RoutedEventArgs e)
         {
-            var botaoClicado = (Button)sender;
-            var clienteSelecionado = botaoClicado.DataContext;
-
-            ClienteSelecionado = (Cliente)clienteSelecionado;
+            SelecionarCliente(sender);
 
             clienteTextBox.Text = ClienteSelecionado.ToString();
 
             contasTabItem.Focus();
+        }
+
+        private void SelecionarCliente(object sender)
+        {
+            var botaoClicado = (Button)sender;
+            var clienteSelecionado = botaoClicado.DataContext;
+
+            ClienteSelecionado = (Cliente)clienteSelecionado;
         }
 
         private void tipoContaComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -175,6 +182,18 @@ namespace FintechCorrentistaWpf
             numeroContaTextBox.Clear();
             tipoContaComboBox.SelectedIndex = -1;
             limiteTextBox.Clear();
+        }
+
+        private void SelecionarContaButtonClick(object sender, RoutedEventArgs e)
+        {
+            SelecionarCliente(sender);
+
+            contaTextBox.Text = ClienteSelecionado.ToString();
+
+            contaComboBox.ItemsSource = ClienteSelecionado.Contas;
+            contaComboBox.Items.Refresh();
+
+            operacoesTabItem.Focus();
         }
     }
 }
