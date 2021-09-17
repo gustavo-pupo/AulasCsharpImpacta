@@ -19,9 +19,41 @@ namespace Fintech.Dominio.Entidades
         public Agencia Agencia { get; set; }
         public int Numero { get; set; }
         public string DigitoVerificador { get; set; }
-        public decimal Saldo { get;  private set; }
+        public decimal Saldo 
+        {
+            get
+            {
+                return TotalDepositos - TotalSaque;
+            }  
+            private set { }
+        }
         public Cliente Cliente { get; set; }
         public List<Movimento> Movimentos { get; set; } = new List<Movimento>();
+
+        public decimal TotalDepositos 
+        {
+            get
+            {
+                return Movimentos
+                    .Where(m => m.Operacao == Operacao.Deposito)
+                    .Sum(m => m.Valor);
+            }
+        
+        }
+
+        public decimal TotalSaque => Movimentos
+                    .Where(m => m.Operacao == Operacao.Saque)
+                    .Sum(m => m.Valor);
+        /*{
+            get
+            {
+                return Movimentos
+                    .Where(m => m.Operacao == Operacao.Saque)
+                    .Sum(m => m.Valor);
+            }
+
+        }*/
+
 
         public abstract List<string> Validar();
 
@@ -45,10 +77,11 @@ namespace Fintech.Dominio.Entidades
             return erros;
         }
 
-        public void EfetuarOperacao(decimal valor, Operacao operacao, decimal limite = 0)
+        public virtual Movimento EfetuarOperacao(decimal valor, Operacao operacao, decimal limite = 0)
         {
 
             var sucesso = true;
+            Movimento movimento = null;
 
             switch (operacao)
             {
@@ -66,7 +99,16 @@ namespace Fintech.Dominio.Entidades
                     }
                     break;
             }
-            if (sucesso) Movimentos.Add(new Movimento(operacao, valor));
+            if (sucesso) 
+            {
+                movimento = new Movimento(operacao, valor);
+                movimento.Conta = this;
+
+                Movimentos.Add(movimento); 
+            
+            }
+
+            return movimento;
         }
     }
 }

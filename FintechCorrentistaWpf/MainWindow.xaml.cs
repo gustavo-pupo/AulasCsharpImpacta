@@ -1,5 +1,6 @@
 ﻿using Fintech.Dominio;
 using Fintech.Dominio.Entidades;
+using FintechRepositoriosSistemaArquivos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace FintechCorrentistaWpf
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly MovimentoRepositorio movimentoRepositorio = new(Properties.Settings.Default.CaminhoArquivoMovimento);
         public List<Cliente> Clientes { get; set; } = new List<Cliente>();
         public Cliente ClienteSelecionado { get; set; }
 
@@ -194,6 +196,42 @@ namespace FintechCorrentistaWpf
             contaComboBox.Items.Refresh();
 
             operacoesTabItem.Focus();
+        }
+
+        private void incluirOperacaoButton_Click(object sender, RoutedEventArgs e)
+        {
+            var conta = (Conta)contaComboBox.SelectedItem;
+            var operacao = (Operacao)operacaoComboBox.SelectedItem;
+            var valor = Convert.ToDecimal(valorTextBox.Text);
+
+            var movimento = conta.EfetuarOperacao(valor, operacao);
+
+            if (movimento != null)
+            {
+                var repositorio = new MovimentoRepositorio("");
+                repositorio.Inserir(movimento); 
+            }
+
+           
+            AtualizarGridMovimentacao(conta);
+
+        }
+
+        private void AtualizarGridMovimentacao(Conta conta)
+        {
+            movimentacaoDataGrid.ItemsSource = conta.Movimentos;
+            movimentacaoDataGrid.Items.Refresh();
+
+            saldoTextBox.Text = conta.Saldo.ToString("C");
+        }
+
+        private void contaComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var conta = (Conta)contaComboBox.SelectedItem;
+
+            movimentoRepositorio.Selecionar(conta.Agencia.Numero, conta.Numero);
+
+            AtualizarGridMovimentacao(conta);
         }
     }
 }
