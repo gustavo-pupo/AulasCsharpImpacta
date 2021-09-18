@@ -3,6 +3,7 @@ using Fintech.Dominio.Entidades;
 using FintechRepositoriosSistemaArquivos;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -200,20 +201,43 @@ namespace FintechCorrentistaWpf
 
         private void incluirOperacaoButton_Click(object sender, RoutedEventArgs e)
         {
-            var conta = (Conta)contaComboBox.SelectedItem;
-            var operacao = (Operacao)operacaoComboBox.SelectedItem;
-            var valor = Convert.ToDecimal(valorTextBox.Text);
-
-            var movimento = conta.EfetuarOperacao(valor, operacao);
-
-            if (movimento != null)
+            try
             {
-                var repositorio = new MovimentoRepositorio("");
-                repositorio.Inserir(movimento); 
-            }
+                var conta = (Conta)contaComboBox.SelectedItem;
+                var operacao = (Operacao)operacaoComboBox.SelectedItem;
+                var valor = Convert.ToDecimal(valorTextBox.Text);
 
-           
-            AtualizarGridMovimentacao(conta);
+                var movimento = conta.EfetuarOperacao(valor, operacao);
+
+                if (movimento != null)
+                {
+                    //var repositorio = new MovimentoRepositorio("");
+                    movimentoRepositorio.Inserir(movimento);
+                }
+
+                AtualizarGridMovimentacao(conta);
+            }
+            catch(FileNotFoundException excecao)
+            {
+                MessageBox.Show($"O arquivo {excecao.FileName} não foi encontrado.");
+            }
+            catch(DirectoryNotFoundException)
+            {
+                MessageBox.Show($"O diretório {Properties.Settings.Default.CaminhoArquivoMovimento} não foi encontrado.");
+            }
+            catch(SaldoInsuficienteException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Eita! Algo deu errado e em breve teremos uma solução");
+                //Logar(ex); //log4net
+            }
+            finally
+            {
+                //é executado sempre, mesmo que haja um return no método
+            }
 
         }
 
@@ -225,12 +249,16 @@ namespace FintechCorrentistaWpf
             saldoTextBox.Text = conta.Saldo.ToString("C");
         }
 
-        private void contaComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void ContaComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            mainSpinner.Visibility = Visibility.Visible;
+
             var conta = (Conta)contaComboBox.SelectedItem;
 
-            movimentoRepositorio.Selecionar(conta.Agencia.Numero, conta.Numero);
+            conta.Movimentos = await movimentoRepositorio.SelecionarAsync(conta.Agencia.Numero, conta.Numero);
+            //conta.Movimentos = movimentoRepositorio.Selecionar(conta.Agencia.Numero, conta.Numero);
 
+            mainSpinner.Visibility = Visibility.Hidden;
             AtualizarGridMovimentacao(conta);
         }
     }
