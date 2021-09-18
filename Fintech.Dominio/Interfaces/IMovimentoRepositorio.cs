@@ -14,6 +14,7 @@ namespace Fintech.Dominio.Interfaces
         void Inserir(Movimento movimento);
 
         List<Movimento> Selecionar(int numeroAgencia, int numeroConta);
+        Task<List<Movimento>> SelecionarAsync(int numeroAgencia, int numeroConta);
 
         void Atualizar(Movimento movimento) => throw new InvalidOperationException();
 
